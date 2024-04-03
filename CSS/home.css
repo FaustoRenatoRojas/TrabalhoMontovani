@@ -95,22 +95,21 @@ footer{
     text-align: center;
 }
 
-
-.imagens-tempo{
-    height: 200px;
-}
-
-.cartaz{
-    padding-top: 20px;
-    display: flex;
-    gap: 30px;
-    position: relative;
-}
-
-.catalogo-filmes{
-    margin: auto;
-}
-
-.titulo-filme{
+.titulo-pagina-filme{
+    background-color: #6d6d6d;
+    border-radius: 50px;
     text-align: center;
+    padding: 30px;
+    width: 400px;
+    margin: 40px 0px;
+    align-items: center;
+}
+
+
+.pagina-filme{
+    display: flex;
+    text-align: center;
+    max-width: 800px;
+    margin: auto;
+    gap: 30px;
 }

@@ -1,2 +1,22 @@
 @charset "UTF-8";
 
+.imagens-tempo{
+    height: 200px;
+}
+
+.cartaz{
+    padding-top: 20px;
+    display: flex;
+    gap: 30px;
+    position: relative;
+}
+
+.catalogo-filmes{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+}
+
