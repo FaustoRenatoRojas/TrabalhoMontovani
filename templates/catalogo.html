@@ -1,31 +1,42 @@
-<!DOCTYPE html>
+<!DOCTYPE html>     
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/CSS/home.css">
+    <link rel="stylesheet" href="/CSS/home.css">    
     <title>Cinema</title>
 </head>
 <body>
     <header>
         <nav>
-            <span id="nome">Cinema</span>
+            <span id="nome">Cinema™</span>
             <ul>
-                <a href="catalogo.html"><li>Catalogo</li></a>
-                <a href="index.html" target="_self"><li>Home</li></a>
-                <a href="quemsomos.html" target="_self"><li>Quem Somos</li></a>
+                <a href="catalogo.html" target="_self" class="link-navi"><li>PROGRAMAÇÃO</li></a>
+                <li id="pagina-atual">HOME</li>
+                <a href="quemsomos.html" target="_self" class="link-navi"><li>CONTATO</li></a>
+                <a href=""><li id="vip">CINEMA VIP</li></a>
             </ul>
-            <img src="../Imagens/carrinho.png" alt="Carrinho" id="carrinho">
+            <a href=""><img src="../Imagens/carrinho.png" alt="Carrinho" id="carrinho"></a>
         </nav>
     </header>
     <main>
-        <section id="home-fotos">
-            <div>
-                <div class="seat">6</div>
-                <div class="seat">7</div>
-                <div class="seat">8</div>
-                <div class="seat">9</div>
-                <div class="seat">10</div>
+        <section >
+            <div class"catalogo-filmes">
+                <h3>Filmes Em Cartaz</h3>
+                <div class="cartaz">
+                    <div>
+                        <a href="\templates\filmes\scooby.html" target="_self"><img src="../Imagens/scooby.jpg" class="imagens-tempo"></a>
+                        <h4 class="titulo-filme">Acharam o Scooby</h4>
+                    </div>
+                    <div>
+                        <a href=""><img src="../Imagens/cade a dora.jpg" class="imagens-tempo"></a>
+                        <h4 class="titulo-filme">Onde está a Dora?</h4>
+                    </div>
+                    <div>
+                        <a href=""><img src="../Imagens/imperio contra ataca.jpg" class="imagens-tempo"></a>
+                        <h4 class="titulo-filme">O Squilo Matador</h4>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
@@ -41,10 +52,10 @@
             <ul class="ul-rodape">
                 <h3><li class="lider">Contato</li></h3>
                 <li>Telefone: (14) 3030-4040</li>
-                <li>Email: contato@lacuisineelegante.com.br</li>
+                <li>Email: contato@cinema.com.br</li>
             </ul>
         </div>
-        <div id="copy-rodape"><span>&copy;2024 Restaurante La Cuisine Élégante. Todos os direitos reservados</span></div>
+        <div id="copy-rodape"><span>&copy;2024 Cinema. Todos os direitos reservados</span></div>
     </footer>
     <script src="/script.js"></script>
 </body>

@@ -12,6 +12,34 @@
     font-family: 'Teko', sans-serif;
     text-transform: uppercase;
     font-size: 1.5em;
+    scale: 2;
+}
+
+
+#vip{
+    padding: 5px;
+    background-color: red;
+}
+
+#pagina-atual{
+    color: #6d6d6d;
+}
+
+.link-navi{
+    padding: 5px;
+}
+
+.link-navi:hover{
+    transform: scale(1.2);
+    transition: 0.5s;
+    border-radius: 10px;
+    box-shadow: 0 0 20px 4px rgba(0, 0, 0, 0.5);
+}
+
+#vip:hover{
+    transition: 0.2s;
+    border-radius: 10px;
+    height: ;
 }
 
 #carrinho{
@@ -33,7 +61,7 @@ ul{
     display: flex;
     flex-direction: row;
     gap: 20px;
-
+    align-items: center;
 }
 
 a{
@@ -65,5 +93,25 @@ footer{
 
 #copy-rodape{
     padding-top: 50px;
+    text-align: center;
+}
+
+
+.imagens-tempo{
+    height: 200px;
+}
+
+.cartaz{
+    padding-top: 20px;
+    display: flex;
+    gap: 30px;
+    position: relative;
+}
+
+.catalogo-filmes{
+    margin: auto;
+}
+
+.titulo-filme{
     text-align: center;
 }
