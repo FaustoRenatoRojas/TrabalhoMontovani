@@ -12,16 +12,20 @@
     font-family: 'Teko', sans-serif;
     text-transform: uppercase;
     font-size: 1.5em;
-    background-image: linear-gradient(to left, #5d83c9, black, #5d83c9);
+}
+
+#carrinho{
+    scale: 0.6;
 }
 
 nav{
     display: flex;
     gap: 20px;
-    background-color: #5d83c9;
+    background-color: #003088;
     padding: 30px;
     justify-content: space-evenly;
     color: #EEEEEE;
+    align-items: center;
 }
 
 ul{
