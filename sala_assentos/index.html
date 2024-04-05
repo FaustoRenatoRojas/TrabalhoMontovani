@@ -82,27 +82,6 @@
             // Aqui você pode fazer algo com as cadeiras selecionadas, como enviar para o servidor ou exibir em algum lugar
             alert(`Cadeiras selecionadas: ${selectedSeatsArray.join(', ')}`);
         }
-
-        /*
-
-        document.addEventListener('DOMContentLoaded', function() {
-            const rows = document.querySelectorAll('.row');
-
-            rows.forEach(row => {
-            for (let i = 1; i < 16; i++) {
-                const seat = document.createElement('div');
-                seat.classList.add('seat');
-                seat.textContent = i;
-                row.appendChild(seat);
-
-                    seat.addEventListener('click', function() {
-                        if (!seat.classList.contains('occupied')) {
-                            seat.classList.toggle('selected');
-                        }
-                    });
-                }
-            });
-        }); */
         
         document.addEventListener('DOMContentLoaded', function() {
             const numRows = 10; // Defina o número de fileiras desejado
