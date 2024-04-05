@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/CSS/home.css">    
-    <link rel="stylesheet" href="../CSS/programacao.css">
+    <link rel="stylesheet" href="/CSS/assentos.css">
     <title>Cinema</title>
 </head>
 <body>
@@ -17,27 +17,21 @@
                 <a href="/templates/quemsomos.html" target="_self" class="link-navi"><li>CONTATO</li></a>
                 <a href=""><li id="vip">CINEMA VIP</li></a>
             </ul>
-            <a href=""><img src="../Imagens/carrinho.png" alt="Carrinho" id="carrinho"></a>
+            <a href=""><img src="/Imagens/carrinho.png" alt="Carrinho" id="carrinho"></a>
         </nav>
     </header>
     <main>
-        <section >
-            <div class="catalogo-filmes">
-                <h3>Filmes Em Cartaz</h3>
-                <div class="cartaz">
-                    <div>
-                        <a href="filmes/scooby.html" target="_self"><img src="../Imagens/scooby.jpg" class="imagens-tempo"></a>
-                        <h4 class="titulo-filme">Acharam o Scooby</h4>
-                    </div>
-                    <div>
-                        <a href="filmes/cadeadora.html"><img src="../Imagens/cade a dora.jpg" class="imagens-tempo"></a>
-                        <h4 class="titulo-filme">Onde está a Dora?</h4>
-                    </div>
-                    <div>
-                        <a href="filmes/imperiocontraataca.html"><img src="../Imagens/imperio contra ataca.jpg" class="imagens-tempo"></a>
-                        <h4 class="titulo-filme">O Squilo Matador</h4>
-                    </div>
-                </div>
+        <section class="assento">
+            <div class="container">
+                <h1>Escolha as cadeiras da sala</h1>
+                <div class="screen">
+                    <p>Tela do Cinema</p>
+                </div>    
+        
+                <div class="row"></div>
+            
+                <button class="confirm-button" onclick="confirmSeats()">Confirmar</button>
+            </div>
             </div>
         </section>
     </main>
@@ -58,6 +52,6 @@
         </div>
         <div id="copy-rodape"><span>&copy;2024 Cinema. Todos os direitos reservados</span></div>
     </footer>
-    <script src="/script.js"></script>
+    <script src="/assentos.js"></script>
 </body>
 </html>
