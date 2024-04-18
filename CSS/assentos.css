@@ -101,3 +101,10 @@ h1{
     align-items: center;
     gap: 10px;
 }
+
+.selected-seats-info{
+    padding: 30px 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}

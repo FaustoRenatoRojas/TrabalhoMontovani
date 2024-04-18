@@ -4,16 +4,13 @@ function confirmSeats() {
     const numberOfSeats = selectedSeats.length;
     const totalPrice = numberOfSeats * 10; // Cada assento custa R$10
 
-    const selectedSeatsList = document.querySelector('.selected-seats');
-    selectedSeatsList.innerHTML = `Número de assentos selecionados: ${numberOfSeats}<br>`;
-    selectedSeatsList.innerHTML += `Assentos selecionados: ${selectedSeatsArray.join(', ')}<br>`;
-    selectedSeatsList.innerHTML += `Preço total: R$${totalPrice.toFixed(2)}`;
+    const numSeatsSelectedElement = document.querySelector('.num-seats-selected');
+    const selectedSeatsListElement = document.querySelector('.selected-seats-list');
+    const totalPriceElement = document.querySelector('.total-price');
 
-    // Exibir as informações antes de confirmar
-    const infoAssentos = document.querySelector('.info-assentos');
-    infoAssentos.innerHTML = `<p>Número de assentos selecionados: ${numberOfSeats}</p>`;
-    infoAssentos.innerHTML += `<p>Assentos selecionados: ${selectedSeatsArray.join(', ')}</p>`;
-    infoAssentos.innerHTML += `<p>Preço total: R$${totalPrice.toFixed(2)}</p>`;
+    numSeatsSelectedElement.textContent = `Número de assentos selecionados: ${numberOfSeats}`;
+    selectedSeatsListElement.textContent = `Assentos selecionados: ${selectedSeatsArray.join(', ')}`;
+    totalPriceElement.textContent = `Preço total: R$${totalPrice.toFixed(2)}`;
 }
 
 document.addEventListener('DOMContentLoaded', function() {
