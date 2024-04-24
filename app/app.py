@@ -13,6 +13,31 @@ config = {
 
 conexao = mysql.connector.connect(**config)
 cursor = conexao.cursor()
+
+# Criar login
+@app.route('/criar_usuario/', methods=['POST'])
+def criar_usuario():
+    dados = request.get_json()
+    
+    if 'usuario' not in dados or 'senha' not in dados:
+        return jsonify({'mensagem': 'Campos "usuario" e "senha" são obrigatórios'}), 400
+    
+    usuario = dados['usuario']
+    senha = dados['senha']
+    
+    # Verifica se o usuário já existe
+    cursor.execute("SELECT * FROM login_cinema WHERE usuario = %s", (usuario,))
+    if cursor.fetchone():
+        return jsonify({'mensagem': 'Usuário já existe'}), 400
+    
+    # Insere novo usuário e senha na tabela login_cinema
+    insercao = "INSERT INTO login_cinema (usuario, senha) VALUES (%s, %s)"
+    cursor.execute(insercao, (usuario, senha))
+    conexao.commit()
+    
+    return jsonify({'mensagem': 'Usuário criado com sucesso'}), 201
+
+# ENDPOINTS PARA A SALA DO CINEMA
 # Consultar todos os assentos no banco
 @app.route('/consultar_sala/', methods=['GET'])
 def consultar_sala():
