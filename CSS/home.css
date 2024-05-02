@@ -51,8 +51,7 @@ body{
 
 nav{
     display: flex;
-    gap: 20px;
-    background-color: #003088;
+    background-color: #051119;
     padding: 30px;
     justify-content: space-evenly;
     color: #EEEEEE;
@@ -63,7 +62,7 @@ ul{
     list-style: none;
     display: flex;
     flex-direction: row;
-    gap: 20px;
+    gap: 50px;
     align-items: center;
 }
 
@@ -87,13 +86,14 @@ footer{
 .rodape{
     display: flex;
     flex-direction: row;
+    padding-bottom: 40px;
 }
 
 .rodape-copy{
     display: flex;
     align-items: center;
     padding-top: 40px;
-    gap: 20px;
+    gap: 40px;
     text-align: center;
     justify-content: center;
 }
@@ -107,3 +107,63 @@ ol{
     list-style: decimal-leading-zero;
 }
 
+#introducao strong{
+    color: #FFFFFF;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+#introducao img{
+    max-width: 45%;
+    height: 80%;
+    border-radius: 20%;
+}
+
+#introducao{
+    height: 60vh;
+    display: flex;
+    background-color: #0c283a;
+    gap: 10em;
+    padding: 60px;
+    align-items: center;
+    justify-content: center;
+    line-height: 3em;
+}
+
+.link {
+    position: relative; /* Define a posição relativa para o contêiner */
+    display: inline-block; /* Permite que o contêiner se ajuste ao tamanho do conteúdo */
+    color: black; /* Cor do texto (opcional) */
+    text-decoration: none; /* Remove o sublinhado padrão do texto */
+}
+
+/* Estilizando a linha acima do texto */
+.link::before,
+.link::after {
+    content: ''; /* Adiciona conteúdo pseudo-elemento para a linha */
+    position: absolute; /* Posiciona o elemento de forma absoluta em relação ao contêiner pai */
+    width: 0; /* Inicialmente a largura da linha é zero */
+    height: 2px; /* Define a altura da linha */
+    background-color: blue; /* Cor da linha (neste exemplo, azul) */
+    visibility: hidden; /* Inicialmente oculta a linha */
+    transition: width 0.5s ease, visibility 0.3s ease; /* Adiciona transição suave para largura e visibilidade */
+}
+
+/* Linha acima do texto */
+.link::before {
+    top: 0; /* Posiciona a linha no topo do contêiner pai */
+    right: 0; /* Posiciona a linha no final do contêiner */
+}
+
+/* Linha abaixo do texto */
+.link::after {
+    bottom: 0; /* Posiciona a linha na parte inferior do contêiner pai */
+    left: 0; /* Posiciona a linha no início do contêiner */
+}
+
+/* Exibe as linhas ao passar o mouse sobre o texto */
+.link:hover::before,
+.link:hover::after {
+    visibility: visible; /* Torna as linhas visíveis */
+    width: 100%; /* Amplia a largura das linhas para 100% */
+}
