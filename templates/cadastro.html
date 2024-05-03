@@ -3,21 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/CSS/login.css">  
-    <title>MyMoon Cinemas</title>
+    <link rel="stylesheet" type="text/css" href="/CSS/login.css">
+    <title>Realizar Cadastro</title>
 </head>
 <body>
-    <section class="login">
-        <h1>MyMoon Cinemas</h1>
-        <div class="div-login">
-            <h2>Cadastrar</h2>
-            <form id="formUsuario">
-                <input type="text" id="usuario">
-                <input type="text" id="senha">
-                <a href="/templates/login.html" id="cadastrar">cadastrar</a>
-            </form>
-        </div>
-    </section>
-    <script src="/login_certo.js"></script>
+    <h1>Cadastrar Usuário</h1>
+    <form id="cadastroForm" action="/criar_usuario/" method="POST">
+        <label for="usuario">Usuário:</label>
+        <input type="text" id="usuario" name="usuario" required>
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" name="senha" required>
+        <button type="submit">Cadastrar</button>
+    </form>
+    <div id="mensagem"></div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var form = document.getElementById('cadastroForm');
+
+            form.addEventListener('submit', function (event) {
+                event.preventDefault(); // para impedir o comportamento padrao do formulario
+            
+                var usuario = document.getElementById('usuario').value;
+                var senha = document.getElementById('senha').value;
+
+                // POST para o endpoint Flask com fetch
+                fetch('/criar_usuario/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ usuario: usuario, senha: senha })
+                })
+                .then(response => {
+                    if (response.ok) {
+                        return response.json();
+                    } else {
+                        throw new Error('Erro ao enviar dados');
+                    }
+                })
+                .then(data => {
+                    if (data.mensagem) {
+                        document.getElementById('mensagem').textContent = data.mensagem;
+                        // Limpar os campos do formulário após o cadastro bem-sucedido
+                        document.getElementById('usuario').value = '';
+                        document.getElementById('senha').value = '';
+                    } else {
+                        throw new Error('Erro ao criar usuário');
+                    }
+                })
+                .catch(error => {
+                    console.error('Erro:', error);
+                    // Exibir mensagem de erro na tela
+                    document.getElementById('mensagem').textContent = error.message;
+                });
+            });
+        });
+    </script>
 </body>
 </html>
