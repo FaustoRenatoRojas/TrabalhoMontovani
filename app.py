@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, request, jsonify, render_template, redirect
 import mysql.connector
 
 app = Flask(__name__)
@@ -14,11 +14,7 @@ config = {
 conexao = mysql.connector.connect(**config)
 cursor = conexao.cursor()
 
-@app.route('/cadastro')
-def cadastro():
-    return render_template('cadastro.html')
-
-# Criar login (Cadastrar)
+# Criar login (Cadastrar) e verificar se usuario ja existe 
 @app.route('/criar_usuario/', methods=['POST'])
 def criar_usuario():
     if request.is_json:
@@ -43,6 +39,33 @@ def criar_usuario():
         return jsonify({'mensagem': 'Usuário criado com sucesso'}), 201
     else:
         return jsonify({'error': 'A requisicao nao e JSON'}), 415
+    
+# Verificaçao do login
+@app.route('/verificar_login/', methods=['POST'])
+def verificar_login():
+    # Verifique se os dados foram enviados no formato JSON
+    if request.is_json:
+        # Obtenha os dados do JSON
+        dados = request.get_json()
+
+        # Extraia o nome de usuário e senha dos dados JSON
+        usuario = dados.get('usuario')
+        senha = dados.get('senha')
+
+        # Verifique se o usuário existe no banco de dados e se a senha está correta
+        cursor.execute("SELECT * FROM login_cinema WHERE usuario = %s AND senha = %s", (usuario, senha))
+        user = cursor.fetchone()
+
+        if user:
+            # Usuário autenticado, redirecione para a página principal
+            return jsonify({'success': True}), 200
+        else:
+            # Usuário não encontrado ou senha incorreta, retorne uma mensagem de erro
+            return jsonify({'error': 'Nome de usuário ou senha incorretos'}), 401
+    else:
+        # Se os dados não estiverem no formato JSON, retorne um erro
+        return jsonify({'error': 'A requisição deve ser enviada no formato JSON'}), 400
+
 
 # ENDPOINTS PARA A SALA DO CINEMA
 # Consultar todos os assentos no banco
@@ -93,6 +116,47 @@ def atualizar_situacao_assento(id):
     conexao.commit()
     
     return jsonify({'mensagem': f'Situação do assento {id} atualizada com sucesso'}), 200
+
+
+@app.route('/cadastro')
+def cadastro():
+    return render_template('cadastro.html')
+
+@app.route('/login')
+def login():
+    return render_template('login.html')
+
+@app.route('/home')
+def home():
+    return render_template('index.html')
+
+@app.route('/catalogo')
+def catalogo():
+    return render_template('catalogo.html')
+
+@app.route('/quemsomos')
+def quemsomos():
+    return render_template('quemsomos.html')
+
+@app.route('/politica_priv')
+def politica_priv():
+    return render_template('politica_priv.html')
+
+@app.route('/termo_uso')
+def termo_uso():
+    return render_template('termo_uso.html')
+
+@app.route('/cadeadora') # filmes/cadeadora.html
+def cadeadora():
+    return render_template('filmes/cadeadora.html')
+
+@app.route('/cinemavip')
+def cinemavip():
+    return render_template('cinemavip.html')
+
+@app.route('/salaDora')
+def salaDora():
+    return render_template('salas cinema/sala-dora.html')
 
 if __name__ == '__main__':
     app.run(debug=True)

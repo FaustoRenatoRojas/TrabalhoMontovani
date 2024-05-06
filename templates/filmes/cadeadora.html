@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/CSS/home.css"> 
-    <link rel="stylesheet" href="/CSS/filme.css">   
+    <link rel="stylesheet" href="/static/CSS/home.css"> 
+    <link rel="stylesheet" href="/static/CSS/filme.css">   
     <title>Cinema</title>
 </head>
 <body>
@@ -12,19 +12,19 @@
         <nav>
             <span id="nome">Cinema™</span>
             <ul>
-                <a href="catalogo.html" target="_self" class="link-navi"><li>PROGRAMAÇÃO</li></a>
-                <a href="index.html" target="_self" class="link-navi"><li>HOME</li></a>
-                <a href="quemsomos.html" target="_self" class="link-navi"><li>CONTATO</li></a>
-                <a href="cinemavip.html"><li id="vip">CINEMA VIP</li></a>
+                <a href="/catalogo" target="_self" class="link-navi"><li>PROGRAMAÇÃO</li></a>
+                <a href="/home" target="_self" class="link-navi"><li>HOME</li></a>
+                <a href="/quemsomos" target="_self" class="link-navi"><li>CONTATO</li></a>
+                <a href="/cinemavip"><li id="vip">CINEMA VIP</li></a>
             </ul>
-            <a href=""><img src="/Imagens/carrinho.png" alt="Carrinho" id="carrinho"></a>
+            <a href=""><img src="/static/Imagens/carrinho.png" alt="Carrinho" id="carrinho"></a>
         </nav>
     </header>
     <main>
         <section id="home-filme">
             <h2 class="titulo-pagina-filme">Onde está a Dora?</h2>
             <div class="pagina-filme">
-                <img src="/Imagens/cade a dora.jpg" alt="">
+                <img src="/static/Imagens/cade a dora.jpg" alt="">
                 <p>
                     "Onde Está a Dora?" é uma comédia hilariante que narra as desventuras de um jovem excêntrico chamado Pedro, cujo cabelo peculiarmente 
                     semelhante ao da famosa personagem de desenho animado, Dora, o deixa constantemente em situações constrangedoras. Determinado a 
@@ -41,7 +41,7 @@
                 <div class="horarios-cinema">
                     <p>Dia 20/04</p>
                     <p>17h30</p>
-                    <a href="/templates/salas cinema/sala-dora.html" target="_self"><p><strong>Comprar</strong></p></a>
+                    <a href="/salaDora" target="_self"><p><strong>Comprar</strong></p></a>
                 </div>
             </div>
         </section>
@@ -65,6 +65,5 @@
             <div id="copy-rodape"><span>&copy;2024 Cinema. Todos os direitos reservados</span></div>
         </div>
     </footer>
-    <script src="/script.js"></script>
 </body>
 </html>

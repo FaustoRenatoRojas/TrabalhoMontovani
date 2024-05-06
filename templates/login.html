@@ -3,19 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/CSS/login.css"> 
-    <title>Realizar Cadastro</title>
+    <link rel="stylesheet" href="/static/CSS/login.css">
+    <title>Login</title>
 </head>
 <body>
-    <h1>Cadastrar Usuário</h1>
-    <form id="cadastroForm" action="/criar_usuario/" method="POST">
-        <label for="usuario">Usuário:</label>
+    <h1>Login</h1>
+    <form id="loginForm">
+        <label for="usuario">Nome de Usuário:</label>
         <input type="text" id="usuario" name="usuario" required>
         <label for="senha">Senha:</label>
         <input type="password" id="senha" name="senha" required>
-        <button type="submit">Cadastrar</button>
+        <button type="submit">Entrar</button>
+        <a href="/cadastro">Ainda não possui uma conta? Cadastre-se aqui.</a>
     </form>
     <div id="mensagem"></div>
-    <script src="/static/JS/cadastro.js"></script>
+    <script src="/static/JS/login.js"></script>
 </body>
 </html>
