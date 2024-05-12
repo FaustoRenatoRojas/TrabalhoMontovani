@@ -65,6 +65,32 @@ def verificar_login():
     else:
         # Se os dados não estiverem no formato JSON, retorne um erro
         return jsonify({'error': 'A requisição deve ser enviada no formato JSON'}), 400
+    
+    
+# Endpoint para confirmar a seleção dos assentos
+@app.route('/confirmar_assentos/', methods=['POST'])
+def confirmar_assentos():
+    if request.is_json:
+        dados = request.get_json()
+        
+        if 'assentos' not in dados:
+            return jsonify({'mensagem': 'A lista de assentos é obrigatória'}), 400
+        
+        assentos = dados['assentos']
+        
+        try:
+            for assento in assentos:
+                # Atualiza a situação do assento no banco de dados para ocupado (1)
+                cursor.execute("UPDATE sala_cinema SET situacao_sala = 1 WHERE id = %s", (assento,))
+                conexao.commit()
+            
+            return jsonify({'mensagem': 'Assentos confirmados com sucesso'}), 200
+        except Exception as e:
+            # Em caso de erro, desfaz quaisquer alterações no banco de dados e retorna uma mensagem de erro
+            conexao.rollback()
+            return jsonify({'error': f'Erro ao confirmar assentos: {str(e)}'}), 500
+    else:
+        return jsonify({'error': 'A requisição deve ser enviada no formato JSON'}), 400
 
 
 # ENDPOINTS PARA A SALA DO CINEMA
@@ -76,7 +102,7 @@ def consultar_sala():
     resultados = cursor.fetchall()
     
     if resultados: 
-        sala = [{'id': id, 'situacao_sala': situacao_sala, 'cadeira': cadeira} for id, situacao_sala, cadeira in resultados]
+        sala = [{'id': id, 'situacao_sala': situacao_sala, 'cadeira': cadeira} for id, situacao_sala, cadeira, _ in resultados]
         return jsonify({'sala': sala})
     else: 
         return jsonify({'mensagem': 'Sala nao encontrada'}), 404
