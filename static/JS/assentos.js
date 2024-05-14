@@ -1,48 +1,44 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const numRows = 10; // Número de fileiras
-    const numSeatsPerRow = 15; // Número de assentos por fileira
     const container = document.querySelector('.container');
-    const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
-    for (let rowNumber = 0; rowNumber < numRows; rowNumber++) {
-        const row = document.createElement('div');
-        row.classList.add('row');
-        container.appendChild(row);
+    // Mapeamento de IDs para nomes de assentos
+    const seatIdToName = id => {
+        const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        const rowNumber = Math.ceil(id / 15); // Número da fileira
+        const seatNumber = id % 15 || 15; // Número do assento na fileira
+        return `${alphabet[rowNumber - 1]}${seatNumber}`;
+    };
 
-        for (let seatNumber = 1; seatNumber <= numSeatsPerRow; seatNumber++) {
-            const seat = document.createElement('div');
-            seat.classList.add('seat');
-            const seatId = rowNumber * numSeatsPerRow + seatNumber; // Cálculo do ID do assento
-            seat.setAttribute('data-seat-id', seatId); // Define o ID do assento como um atributo
-            seat.textContent = `${alphabet[rowNumber]}${seatNumber}`;
-            row.appendChild(seat);
-
-            verificarStatusAssento(seatId, seat); // Chamando a função para verificar o status do assento
-
-            seat.addEventListener('click', function() {
-                if (!seat.classList.contains('occupied')) {
-                    seat.classList.toggle('selected');
-                    confirmSeats(); // Chamando a função para atualizar as informações quando um assento é selecionado/deselecionado
-                }
-            });
-        }
-    }
-});
-/*
-function verificarStatusAssento(id, seatElement) {
-    // Aqui você faria uma solicitação para o servidor para verificar o status do assento com o ID fornecido
+    // Fazendo uma solicitação para o servidor para obter informações sobre a sala e suas cadeiras
     fetch(`/consultar_sala/`)
         .then(response => response.json())
         .then(data => {
-            const situacaoSala = data.sala.situacao_sala;
-            if (situacaoSala === 1) { // Se o assento estiver ocupado, adiciona a classe 'occupied'
-                seatElement.classList.add('occupied');
-            }
+            const cadeiras = data.sala;
+
+            cadeiras.forEach(cadeira => {
+                const seat = document.createElement('div');
+                seat.classList.add('seat');
+                const seatId = cadeira.id; // Usando o ID do assento do banco de dados diretamente como ID do assento
+                seat.setAttribute('data-seat-id', seatId);
+                seat.textContent = cadeira.cadeira;
+                container.appendChild(seat);
+
+                if (cadeira.situacao_sala == 1) { // Se o assento estiver ocupado, adiciona a classe 'occupied'
+                    seat.classList.add('occupied');
+                }
+
+                seat.addEventListener('click', function() {
+                    if (!seat.classList.contains('occupied')) {
+                        seat.classList.toggle('selected');
+                        confirmSeats(); // Chamando a função para atualizar as informações quando um assento é selecionado/deselecionado
+                    }
+                });
+            });
         })
         .catch(error => {
             console.error('Erro ao verificar status do assento:', error);
         });
-}*/
+});
 
 function verificarStatusAssento() {
     // Fazendo uma solicitação para o servidor para obter informações sobre a sala e suas cadeiras
