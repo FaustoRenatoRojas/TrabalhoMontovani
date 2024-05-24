@@ -160,3 +160,53 @@ ol{
     visibility: visible; /* Torna as linhas visíveis */
     width: 100%; /* Amplia a largura das linhas para 100% */
 }
+
+#main-cinemavip{
+    background-color: #0c283a;
+}
+
+#main-cinemavip h1{
+    text-align: center;
+    padding: 50px;
+    color: #EEEEEE;
+    text-shadow: 1px 1px 1px #333333;
+}
+
+#cinema-vip-global{
+    padding: 70px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.planos{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+    width: 300px;
+    height: 400px;
+    padding: 30px;
+    font-size: 1.2em;
+    background-color: #333333a4;
+}
+
+.planos strong{
+    font-size: 2em;
+}
+
+#plano-bronze{
+    border: 2px #cd7f32 solid;
+    color: #cd7f32;
+}
+
+#plano-prata{
+    border: 2px #c0c0c0 solid;
+    color: #c0c0c0;
+
+}
+
+#plano-ouro{
+    border: 2px #ffd700 solid;
+    color: #ffd700;
+}

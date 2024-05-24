@@ -7,15 +7,30 @@
     <title>Login</title>
 </head>
 <body>
-    <h1>Login</h1>
-    <form id="loginForm">
-        <label for="usuario">Nome de Usuário:</label>
-        <input type="text" id="usuario" name="usuario" required>
-        <label for="senha">Senha:</label>
-        <input type="password" id="senha" name="senha" required>
-        <button type="submit">Entrar</button>
-        <a href="/cadastro">Ainda não possui uma conta? Cadastre-se aqui.</a>
-    </form>
+    <main class="login">
+        <div class="nome-projeto">
+            <span class="titulo-projeto">My</span>
+            <img src="/static/Imagens/moon.png">
+            <span class="titulo-projeto">Cine</span>
+        </div>
+        <div class="div-login">
+            <h2 id="login-nome">Login</h2>
+            <form id="loginForm">
+                <div class="organizacao-form">
+                    <label for="usuario">User:</label>
+                    <input type="text" id="usuario" name="usuario" required>
+                </div>
+                <div class="organizacao-form">
+                    <label for="senha">Password:</label>
+                    <input type="password" id="senha" name="senha" required>
+                </div>
+                <div class="botao-e-senha">
+                    <button type="submit">Entrar</button>
+                    <a href="/cadastro">Ainda não possui uma conta? Cadastre-se aqui.</a>
+                </div>
+            </form>
+        </div>
+    </main>
     <div id="mensagem"></div>
     <script src="/static/JS/login.js"></script>
 </body>

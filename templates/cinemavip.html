@@ -12,32 +12,42 @@
         <nav>
             <span id="nome">Cinema™</span>
             <ul>
-                <a href="/catalogo" target="_self" class="link-navi"><li>PROGRAMAÇÃO</li></a>
-                <a href="/home" target="_self" class="link-navi"><li>HOME</li></a>
-                <a href="/quemsomos" target="_self" class="link-navi"><li>CONTATO</li></a>
+                <a href="/catalogo" target="_self" class="link"><li>PROGRAMAÇÃO</li></a>
+                <a href="/home" target="_self" class="link"><li>HOME</li></a>
+                <a href="/quemsomos" target="_self" class="link"><li>CONTATO</li></a>
                 <a href=""><li id="vip">CINEMA VIP</li></a>
             </ul>
-            <a href=""><img src="/static/Imagens/carrinho.png" alt="Carrinho" id="carrinho"></a>
         </nav>
     </header>
-    <main>
-        <section >
-            <div class="catalogo-filmes">
-                <h3>Filmes Em Cartaz</h3>
-                <div class="cartaz">
-                    <div>
-                        <a href="" target="_self"><img src="/static/Imagens/scooby.png" class="imagens-tempo"></a>
-                        <h4 class="titulo-filme">Acharam o Scooby</h4>
-                    </div>
-                    <div>
-                        <a href="/cadeadora"><img src="/static/Imagens/cade a dora.jpg" class="imagens-tempo"></a>
-                        <h4 class="titulo-filme">Onde está a Dora?</h4>
-                    </div>
-                    <div>
-                        <a href=""><img src="/static/Imagens/imperio contra ataca.jpg" class="imagens-tempo"></a>
-                        <h4 class="titulo-filme">O Squilo Matador</h4>
-                    </div>
-                </div>
+    <main id="main-cinemavip">
+        <h1>SERVIÇO DISPONÍVEL EM BREVE</h1>
+        <section id="cinema-vip-global">
+            <div class="planos" id="plano-bronze">
+                <h2>Plano Bronze</h2>
+                <hr>
+                <p>15% de desconto em produtos selecionados</p>
+                <hr>
+                <p>Acumala 1 ponto a cada real gasto</p>
+                <hr>
+                <span>A partir de R$<strong>16,90</strong> por Mês</span>
+            </div>
+            <div class="planos" id="plano-prata">
+                <h2>Plano Prata</h2>
+                <hr>
+                <p>20% de desconto em produtos selecionados</p>
+                <hr>
+                <p>Acumala 2 ponto a cada real gasto</p>
+                <hr>
+                <span>A partir de R$<strong>20,90</strong> por Mês</span>
+            </div>
+            <div class="planos" id="plano-ouro">
+                <h2>Plano Ouro</h2>
+                <hr>
+                <p>25% de desconto em produtos selecionados</p>
+                <hr>
+                <p>Acumala 3 ponto a cada real gasto</p>
+                <hr>
+                <span>A partir de R$<strong>24,90</strong> por Mês</span>
             </div>
         </section>
     </main>
@@ -56,7 +66,12 @@
                 <li>Email: contato@cinema.com.br</li>
             </ul>
         </div>
-        <div id="copy-rodape"><span>&copy;2024 Cinema. Todos os direitos reservados</span></div>
+        <hr>
+        <div class="rodape-copy">
+            <div id="copy-rodape"><span>&copy;2024 Cinema. Todos os direitos reservados</span></div>
+            <a href="/politica_priv" target="_self" class="rodape-2">POLÍTICA DE PRIVACIDADE</a>
+            <a href="/termo_uso" target="_self" class="rodape-2">TERMO DE USO</a>
+        </div>
     </footer>
 </body>
 </html>
