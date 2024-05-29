@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-#catalogo-main{
+body{
     background-color: #0c283a;
 }
 
@@ -26,3 +26,41 @@
     padding-bottom: 40px;
 }
 
+.descricao-filme{
+    color: #a3a3a3;
+}
+
+.descricao-filme h2{
+    color: white;
+}
+
+.descricao-filme p{
+    text-align: justify;
+    font-size: 1.3em;
+}
+
+.horario-programacao{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    justify-content: center;
+    margin: 40px auto;
+    background-color: #03121b;
+    width: 40%;
+    padding: 15px;
+    border-radius: 10px;
+    color: #EEEEEE;
+    text-transform: uppercase;
+}
+
+.horario-programacao a{
+    color: green;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.horario-programacao a:hover{
+    background-color: rgba(0, 128, 0, 0.329);
+    border-radius: 10px;
+
+}

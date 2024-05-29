@@ -211,3 +211,19 @@ ol{
     color: #ffd700;
 }
 
+#sobre-nos-descri{
+    display: flex;
+    align-items: center;
+    background-color: #a3a3a3;
+    height: 40vh;
+    width: 60%;
+    margin: 50px auto;
+    border-radius: 40px;
+}
+
+#sobre-nos-descri p{
+    color: white;
+    font-size: 2em;
+    text-align: center;
+    padding: 30px;
+}

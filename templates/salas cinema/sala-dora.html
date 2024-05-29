@@ -10,11 +10,15 @@
 <body>
     <header>
         <nav>
-            <span id="nome">Cinema™</span>
+            <div class="nome-projeto">
+                <span class="titulo-projeto">My</span>
+                <img src="/static/Imagens/moon.png">
+                <span class="titulo-projeto">Cine</span>
+            </div>
             <ul>
                 <a href="/catalogo" target="_self" class="link"><li>PROGRAMAÇÃO</li></a>
-                <a href="/home" target="_self" class="link"><li>HOME</li></a>
-                <a href="/quemsomos" target="_self" class="link"><li>CONTATO</li></a>
+                <li id="pagina-atual">HOME</li>
+                <a href="/quemsomos" target="_self" class="link"><li>SOBRE NÓS</li></a>
                 <a href=""><li id="vip">CINEMA VIP</li></a>
             </ul>
         </nav>
@@ -22,7 +26,6 @@
     <main>
         <section class="assento">
             <div class="top-screen">
-                <img src="/static/Imagens/cade a dora.jpg" alt="Filme Cade a Dora?" class="imagens-menor"></img>
                 <div class="informacoes">
                     <span>Filme: Cade a Dora?</span>
                     <div class="imagens-aux">
@@ -52,7 +55,7 @@
                     <div class="selected-seats-list"></div>
                     <div class="total-price"></div>
                 </div>
-                <button class="confirm-button" onclick="confirmarAssentos()">Confirmar</button>
+                <button class="confirm-button" onclick="confirmarAssentos()" id="confirmar-assentos">Confirmar</button>
             </div>
         </section>
     </main>

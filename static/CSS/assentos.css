@@ -1,11 +1,12 @@
 @charset "UTF-8";
 
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f2f2f2;
+    background-color: #0c283a;
 }
+
+
 .container {
     max-width: 800px;
     margin: 50px auto;
@@ -75,8 +76,8 @@ h1{
 
 .informacoes{
     display: flex;
-    flex-direction: column;
     justify-content: center;
+    align-items: center;
     text-align: left;
     padding: 40px 0px;
     gap: 20px;
@@ -86,9 +87,9 @@ h1{
     display: flex;
     flex-direction: row;
     margin: 30px auto 10px auto;
-    background-color: #4aa1fd;
     padding: 40px;
     border-radius: 200px 0px;
+    scale: 1.6;
 }
 
 .imagens-menor{
@@ -101,5 +102,9 @@ h1{
     flex-direction: row;
     align-items: center;
     gap: 10px;
+}
+
+#confirmar-assentos{
+    margin-bottom: 50px;
 }
 
