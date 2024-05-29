@@ -5,25 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/CSS/home.css">    
     <link rel="stylesheet" href="/static/CSS/programacao.css">
-    <title>Cinema</title>
+    <title>Catalogo</title>
 </head>
 <body>
     <header>
         <nav>
-            <span id="nome">Cinema™</span>
+            <div class="nome-projeto">
+                <span class="titulo-projeto">My</span>
+                <img src="/static/Imagens/moon.png">
+                <span class="titulo-projeto">Cine</span>
+            </div>
             <ul>
-                <a href="/catalogo"><li id="pagina-atual">PROGRAMAÇÃO</li></a>
-                <a href="/home" target="_self" class="link"><li>HOME</li></a>
+                <a href="/catalogo" target="_self" class="link"><li>PROGRAMAÇÃO</li></a>
+                <li id="pagina-atual">HOME</li>
                 <a href="/quemsomos" target="_self" class="link"><li>CONTATO</li></a>
                 <a href=""><li id="vip">CINEMA VIP</li></a>
             </ul>
         </nav>
     </header>
-    <main>
+    <main id="catalogo-main">
         <section id="home-filme">
-            <h2 class="titulo-pagina-filme">Onde está a Dora?</h2>
-            <div class="pagina-filme">
-                <img src="/static/Imagens/cade a dora.jpg" alt="">
+            <img src="/static/Imagens/cade a dora.jpg">
+            <div class="descricao-filme">
+                <h2 class="titulo-pagina-filme">Onde está a Dora?</h2>
                 <p>
                     "Onde Está a Dora?" é uma comédia hilariante que narra as desventuras de um jovem excêntrico chamado Pedro, cujo cabelo peculiarmente 
                     semelhante ao da famosa personagem de desenho animado, Dora, o deixa constantemente em situações constrangedoras. Determinado a 

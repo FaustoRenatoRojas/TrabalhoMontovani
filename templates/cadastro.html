@@ -7,15 +7,28 @@
     <title>Realizar Cadastro</title>
 </head>
 <body>
-    <h1>Cadastrar Usuário</h1>
-    <form id="cadastroForm" action="/criar_usuario/" method="POST">
-        <label for="usuario">Usuário:</label>
-        <input type="text" id="usuario" name="usuario" required>
-        <label for="senha">Senha:</label>
-        <input type="password" id="senha" name="senha" required>
-        <button type="submit">Cadastrar</button>
-    </form>
-    <div id="mensagem"></div>
+    <main class="login">
+        <div class="nome-projeto">
+            <span class="titulo-projeto">My</span>
+            <img src="/static/Imagens/moon.png">
+            <span class="titulo-projeto">Cine</span>
+        </div>
+        <div class="div-login">
+            <h2 id="login-nome">Cadastrar</h2>
+            <form id="cadastroForm" action="/criar_usuario/" method="POST">
+                <div class="organizacao-form">
+                    <label for="usuario">Usuário:</label>
+                    <input type="text" id="usuario" name="usuario" required>
+                </div>
+                <div class="organizacao-form">
+                    <label for="senha">Senha:</label>
+                    <input type="password" id="senha" name="senha" required>
+                </div>
+                <div class="botao-e-senha"><button type="submit">Cadastrar</button></div>
+            </form>
+            <div id="mensagem"></div>
+        </div>
+    </main>
     <script src="/static/JS/cadastro.js"></script>
 </body>
 </html>
